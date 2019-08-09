@@ -7,13 +7,7 @@ var xcode = require('xcode'),
     util = require('util');
 
 module.exports = function (context) {
-  var Q;
-  try {
-    Q = require('q');
-  } catch (e) {
-    Q = context.requireCordovaModule('q');
-  }
-
+  var Q = context.requireCordovaModule('q');
   var deferral = new Q.defer();
 
   if (context.opts.cordova.platforms.indexOf('ios') < 0) {
